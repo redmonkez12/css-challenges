@@ -1,0 +1,165 @@
+:root {
+    --pale-blue: #E0E8FF;
+    --very-pale-blue: #F5F7FF;
+    --bright-blue: #3829E0;
+    --bright-blue-hover: #afa9f2;
+    --desaturated--blue: #7280A7;
+    --dark-blue: #1F2F56;
+    --white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-width: fit-content;
+}
+
+p {
+    color: var(--desaturated--blue);
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    background-color: var(--pale-blue);
+    background-image: url("./images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.container .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--white);
+}
+
+.card .content {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 1.5rem 2rem 1.5rem;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.content h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 24px;
+}
+
+.content .plan {
+    background-color: var(--very-pale-blue);
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.plan img {
+    max-width: 50px;
+    margin-right: 1rem;
+}
+
+.plan .pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan .pricing span:first-child {
+    font-weight: 900;
+}
+
+.plan .pricing span:last-child {
+    color: var(--desaturated--blue);
+    margin-top: 0.3rem;
+}
+
+.plan a {
+    margin-left: auto;
+    font-weight: 700;
+    color: var(--bright-blue);
+    font-size: 14px;
+}
+
+.button-group {
+    width: 100%;
+}
+
+.button-group > button + button {
+    margin-top: 1.5rem;
+}
+
+.content p {
+    padding: 0 0.5rem;
+}
+
+.btn {
+    border: 0;
+    background-color: var(--white);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--bright-blue);
+    border-radius: 0.5rem;
+    padding: 0.8rem 1rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--bright-blue-hover);
+}
+
+.btn-link {
+    color: var(--desaturated--blue)
+}
+
+.btn-link:hover {
+    color: var(--dark-blue);
+}
+
+@media screen and (min-width: 391px) {
+    .container {
+        max-width: 1440px;
+        background-image: url("./images/pattern-background-desktop.svg");
+    }
+
+    .container .content {
+        padding: 0 3rem 2rem 3rem;
+    }
+
+    .content p {
+        padding: 0 1rem;
+    }
+}
