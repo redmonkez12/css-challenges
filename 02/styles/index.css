@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --button-color: #21092F;
     --text-error: #FF5252;
+    --black: #21092F;
     --white: #fff;
 }
 
@@ -27,31 +27,137 @@ body {
     background-image: url("../images/bg-main-mobile.png");
 }
 
-.img-background img {
+.img-background > div {
     position: absolute;
     width: 286px;
+    height: 157px;
+    background-size: contain;
 }
 
-.img-background img:first-child {
+.bg-card-front {
+    background-image: url("../images/bg-card-front.png");
     bottom: -43px;
     left: 16px;
     z-index: 2;
+    padding: 18px 19px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.img-background img:last-child {
+.bg-card-back {
+    background-image: url("../images/bg-card-back.png");
     z-index: 1;
     right: 16px;
     top: 32px;
 }
 
+.text-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.bg-card-back .card-text {
+    font-weight: 500;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
+    color: var(--white);
+    right: 37px;
+    top: 72px;
+    font-size: 9px;
+    position: absolute;
+}
+
+.bg-card-front img {
+    width: 54px;
+}
+
+.bg-card-front .bottom {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.bg-card-front .bottom .owner {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+}
+
 .content {
+    margin-top: 91px;
     padding: 0 1.5rem 2.8125rem 1.5rem;
+}
+
+form, .form-group {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+form {
+    gap: 20px;
+}
+
+.form-group {
+    gap: 9px;
+}
+
+form label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 2px;
+    color: var(--black);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+form input {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: var(--black);;
+    border: 1px solid var(--black);
+    height: 45px;
+    border-radius: 0.5rem;
+    width: 100%;
+    padding: 11px 16px;
+}
+
+form input::placeholder {
+    opacity: 0.25;
+}
+
+form button {
+    margin-top: 8px;
+}
+
+.card-details {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.card-details > div:first-child {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.card-details > div {
+    flex-basis: 50%;
 }
 
 button {
     border: none;
     color: var(--white);
-    background-color: var(--button-color);
+    background-color: var(--black);
     padding: 15px;
     width: 100%;
     border-radius: 0.5rem;
@@ -64,7 +170,56 @@ button {
         grid-template-rows: 1fr;
     }
 
+    .container .content {
+        display: grid;
+        margin: 0;
+        padding: 0;
+        place-items: center;
+    }
+
+    form {
+        max-width: 381px;
+    }
+
+    form button {
+        margin-top: 20px;
+    }
+
     .img-background {
         background-image: url("../images/bg-main-desktop.png");
+    }
+
+    .img-background > div {
+        height: 245px;
+        width: 447px;
+    }
+
+    .img-background .bg-card-front .bottom {
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 3.42222px;
+        gap: 26px;
+    }
+
+    .img-background .bg-card-front .owner {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 2px;
+    }
+
+    .img-background .bg-card-back {
+        left: 258px;
+        top: 469px;
+    }
+
+    .img-background .bg-card-front {
+        left: 164px;
+        top: calc(469px - 37px - 245px);
+        padding: 26px 32px;
+    }
+
+    .img-background .bg-card-back .card-text {
+        right: 53px;
+        top: 114px;
     }
 }
