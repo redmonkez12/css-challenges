@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --button-color: #21092F;
+    --text-error: #FF5252;
+    --white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 1fr;
+}
+
+.img-background {
+    position: relative;
+    background-image: url("../images/bg-main-mobile.png");
+}
+
+.img-background img {
+    position: absolute;
+    width: 286px;
+}
+
+.img-background img:first-child {
+    bottom: -43px;
+    left: 16px;
+    z-index: 2;
+}
+
+.img-background img:last-child {
+    z-index: 1;
+    right: 16px;
+    top: 32px;
+}
+
+.content {
+    padding: 0 1.5rem 2.8125rem 1.5rem;
+}
+
+button {
+    border: none;
+    color: var(--white);
+    background-color: var(--button-color);
+    padding: 15px;
+    width: 100%;
+    border-radius: 0.5rem;
+    height: 53px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        grid-template-columns: 483px 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .img-background {
+        background-image: url("../images/bg-main-desktop.png");
+    }
+}
